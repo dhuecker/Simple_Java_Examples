@@ -1,0 +1,58 @@
+/**
+ * Version Control:
+ * Program name: StopSign
+ * Programmer: David Huecker
+ * Date: 05-08-18
+ * Version: 1.0
+ * In this program a stop sign is draw and displayed to the user.
+ */
+
+import javax.swing.*;
+import java.awt.*;
+
+public class StopSign extends JFrame {
+    
+String Stop = new String("STOP");//text that displays on sign
+
+public void paint(Graphics sign){ //sign is the variable used when referencing the graphics class
+
+super.paint(sign);//passes sign to parent paint class
+
+int[] xPoints = {90, 180, 300, 390, 390, 300, 180, 90 };//x coordinates for inner polygon
+int[] yPoints = {180, 90, 90, 180, 300, 390, 390, 300 };//y coordinates for inner polygon
+
+int numPoints = 8; //number of points on stop sign
+
+sign.drawPolygon(xPoints, yPoints, xPoints.length);//draws inner polygon
+sign.setColor(Color.RED);//sets inner polygons color to red
+sign.fillPolygon(xPoints, yPoints, numPoints);
+
+int[] xPoints1 = {100, 190, 290, 380, 380, 290, 190, 100 };//x coordinates for the middle of the sign
+int[] yPoints1 = {190, 100, 100, 190, 290, 380, 380, 290 };//y coordinates for the middle of the sign
+
+sign.drawPolygon(xPoints1, yPoints1, xPoints1.length);
+sign.setColor(Color.black);//sets the color of the middle to black
+sign.fillPolygon(xPoints1, yPoints1, numPoints);
+
+int[] xPoints2 = {120, 200, 280, 360, 360, 280, 200, 120 };//x coordinates for outter polygon
+int[] yPoints2 = {200, 120, 120, 200, 280, 360, 360, 280 };//y coordinates for outter polygon
+
+sign.drawPolygon(xPoints2, yPoints2, xPoints2.length);
+sign.setColor(Color.red);
+sign.fillPolygon(xPoints2, yPoints2, numPoints);
+
+sign.setColor(Color.black);//sets text color to black
+sign.setFont(new Font("Arial", Font.BOLD, 85)); //sets font for text
+sign.drawString(Stop, 125, 260);//draws text with x and y postion
+
+}//end paint
+
+    public static void main(String[] args)
+    {
+        StopSign frame = new StopSign();//creates new sign
+        frame.setSize(500,500);//sets size of window
+        frame.setVisible(true);//makes it visable
+        
+    }//end main 
+    
+}//end class

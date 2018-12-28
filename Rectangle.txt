@@ -1,0 +1,84 @@
+ /**
+ * Version Control:
+ * Program name: Rectangle
+ * Programmer: David Huecker
+ * Date: 05-08-18
+ * Version: 1.0
+ * In this program the user is asked for the height and width of a square and one side of a cube. Using methods and inheritance the surfaceArea of both objects is found and the volume of the cube is computed.
+ */
+public class Rectangle {
+    //private data members for Rectangle
+    private double length;
+    private double width;
+    
+    Rectangle() //Default constructor sets values for data members to 0.0
+    {
+        length = 0.0;
+        width = 0.0;
+    }  
+    
+    Rectangle (double l, double w) //constructor sends values sent in parameters to data members
+    {
+        length = l;
+        width = w;
+    }
+    
+    //Set methods for Rectangle
+    public void setL(double l)
+    {
+        length = l;
+    }
+    
+    public void setW(double w)
+    {
+        width = w;
+    }
+    
+    //get methods for Rectangle
+    public double getL()
+    {
+        return length;
+    }
+   
+    public double getW()
+    {
+        return width;
+    }
+    
+    //Calculates the area of a Rectangle
+    public double area()
+    {
+        return length*width;
+    }
+    
+    //Calculates the perimeter of a Rectangle
+    public double perimeter()
+    {
+        return (2*length)+(2*width);
+    }
+    
+    //prints results of the Rectangle for the user
+    public void results()
+    {
+        System.out.println("This rectangle has length " + length + "ft and has a width of " + width +"ft");
+        System.out.println("The area of the Rectangle is " + area() + "ft");
+        System.out.println("The perimeter of the Rectangle is " + perimeter() + "ft\n");
+    }
+    
+    public static void main(String[] args) {
+        
+       System.out.println("This program displays the results of two Rectangles\nThe 1st Rectangle object has its variables set using the set functions\nWhile the othe Rectangle uses its constructor\n");
+       
+       Rectangle r1 = new Rectangle();//The 1srt object of Rectangle, r1 was created
+       Rectangle r2 = new Rectangle(120.2,144.54);//r2 invokes the Rectangle constructor that allows two double variables to be sent as parameters
+       
+        //r1 uses the set methods to store the values for length and width
+        r1.setL(12.5);
+        r1.setW(25.1);
+        
+        //Results for r1 and r2 are displayed
+        r1.results();
+        r2.results();
+        
+    }//end main
+}//end class

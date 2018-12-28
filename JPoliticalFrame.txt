@@ -1,0 +1,44 @@
+ /**
+ * Version Control:
+ * Program name: JPoliticalFrame
+ * Programmer: David Huecker
+ * Date: 05-08-18
+ * Version: 1.0
+ * In this program six presidents names are added on buttons. The names are displayed using BorderLayout 
+ */
+
+import javax.swing.*;
+import java.awt.*;
+
+
+public class pFrame extends JFrame
+{
+ 
+  public pFrame()
+  {
+    // Get the content pane of the frame
+    Container container = getContentPane();
+
+    // Set BorderLayout in container
+    container.setLayout(new BorderLayout(50, 100));
+
+    // Adds president buttons to the frame
+    container.add(new JButton("Abraham Lincoln"), BorderLayout.EAST);
+    container.add(new JButton("Ronald Regan"), BorderLayout.SOUTH);
+    container.add(new JButton("Jimmy Carter"), BorderLayout.WEST);
+    container.add(new JButton("George Bush"), BorderLayout.NORTH);
+    container.add(new JButton("Bill Clinton"), BorderLayout.CENTER);
+    //each button is postioned using a direction on the window
+  }
+
+  
+  public static void main(String[] args)
+  {
+    pFrame frame = new pFrame(); //creates new frame
+    frame.setTitle("JPoliticalFrame");//title for window
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//exit button
+    frame.setSize(1200, 800);//sets size of window
+    frame.setLocationRelativeTo(null);//It puts the frame in the middle of the screen
+    frame.setVisible(true);//makes it visible
+  }// end main
+}// end class

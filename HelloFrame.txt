@@ -1,0 +1,24 @@
+ /**
+ * Version Control:
+ * Program name: HelloFrame
+ * Programmer: David Huecker
+ * Date: 05-08-18
+ * Version: 1.0
+ * In this program a window is displayed to the user saying Hello World! The window comes with an exit button at the top right
+ */
+
+import javax.swing.*;
+public class HelloFrame extends JFrame 
+{
+      public HelloFrame() 
+     {
+       super("Hello World!");  // The txt of the window
+       setSize(700, 500);//set size of window
+       setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //creates exit button
+       setVisible(true);//makes window visable
+      }
+public static void main(String[] arguments) 
+     {
+       HelloFrame hello = new HelloFrame();//creates window
+     } //end main
+ } // end HelloFrame

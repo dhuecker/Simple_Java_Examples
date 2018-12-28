@@ -1,0 +1,27 @@
+ /**
+ * Version Control:
+ * Program name: MethodOverload
+ * Programmer: David Huecker
+ * Date: 05-08-18
+ * Version: 1.0
+ * In this program the function sum is created to add two numbers. The function is overload with different parameters so that a double and int can be added
+ */
+
+public class MethodOverload {
+    
+    public static int sum (int x, int y){return x+y;}//sum method returns the sum of two int variables
+    public static double sum (int x, double y){return x+y;}//Overloaded method returns the sum of on int and one double
+   
+    public static void main(String[] args) {
+        //static variables used for program
+        
+        int num1 = 10;
+        int num2 = 20;
+        double num3 = 55.55;
+    
+        //Displays the results for the sum methods
+        
+        System.out.println(sum(num1,num2)); //calls sum method and passes two ints
+        System.out.println(sum(num2,num3)); //calls overloaded sum method and passes one int and one double
+    }//end main
+}//end class

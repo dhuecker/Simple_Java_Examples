@@ -1,0 +1,46 @@
+ /**
+ * Version Control:
+ * Program name: Palindrom
+ * Programmer: David Huecker
+ * Date: 05-08-18
+ * Version: 1.0
+ * In this program 
+ */
+public class Pal {
+    
+    public static void main(String[] args) {
+        //Static strings used to test the palindrom method
+        String word1 = "racecar";
+        String word2 = "racecars";
+        
+        //converts both strings to char arrays
+        char[] temp1 = word1.toCharArray(); 
+        char[] temp2 = word2.toCharArray(); 
+        
+        //prints results for both words 
+        System.out.println(Palindrom(temp1)); //should display true
+        System.out.println(Palindrom(temp2));//should display false
+    } //end main
+    
+    public static boolean Palindrom(char[] word)
+    {
+    //counter variables used to compare the 1st letter of the the 1st word and the last letter of the 2nd word
+    int i1 = 0;//1st letter in array 
+    int i2 = word.length - 1;//last letter in array
+    
+    while (i2 > i1) //compares every letter in each word
+    {
+        if (word[i1] != word[i2]) //if any letters don't match return false
+        {
+            return false;
+        }
+        
+        ++i1;
+        --i2;
+    }
+    
+    return true; //Otherwise return true
+    
+    }//end method
+    
+}//end class
